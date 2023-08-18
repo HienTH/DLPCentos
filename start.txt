@@ -1,0 +1,7 @@
+sudo yum update
+sudo yum install gcc-c++
+g++ --version
+
+
+g++ -o megaDLP megaDLP.cpp
+g++ -o megaDLPService megaDLPService.cpp
