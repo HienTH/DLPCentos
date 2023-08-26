@@ -5,3 +5,7 @@ g++ --version
 
 g++ -o megaDLP megaDLP.cpp
 g++ -o megaDLPService megaDLPService.cpp
+
+sudo yum install epel-release
+sudo yum -y update
+yum install -y python3
