@@ -95,7 +95,7 @@ int main(int argc, char* argv[]) {
         if (std::strcmp(argv[i], "-h") == 0 || std::strcmp(argv[i], "--help") == 0) {
             showHelp();
             return 0;
-        } else if (std::strcmp(argv[i], "--infor") == 0) {
+        } else if (std::strcmp(argv[i], "-i") == 0) {
             agentinfor();
         } else if (std::strcmp(argv[i], "--showinfor") == 0) {
             //showinfor();

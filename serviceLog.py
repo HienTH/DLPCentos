@@ -8,24 +8,6 @@ url = "http://localhost:9090/api/loglinux/save_log_linux"
 
 while True:
 
-    # Open the JSON file for reading
-    with open('agentInfo.json', 'r') as file:
-        json_data = json.load(file)
-
-    # Extract username and email from the JSON data
-    id_adm_member = json_data.get("id_adm_member", "")
-    id_adm_company = json_data.get("id_adm_company", "")
-    id_adm_department = json_data.get("id_adm_department", "")
-    username = json_data.get("username", "")
-    email = json_data.get("email", "")
-
-    # Print the extracted information
-    print("Username:", username)
-    print("Email:", email)
-    print("id_adm_member:", id_adm_member)
-    print("id_adm_company:", id_adm_company)
-    print("id_adm_department:", id_adm_department)
-
     # Regular expression pattern to match the line format
     line_pattern = r"Time: (.*?) - Event: (.*?) - File: (.*)"
 
@@ -60,9 +42,9 @@ while True:
 
     print(log)
     logData = {
-        "id_adm_member": 1,
+        "id_adm_member": 136,
         "id_adm_company": 1,
-        "id_adm_department": 81,
+        "id_adm_department": 198,
         "log": log
     }
 

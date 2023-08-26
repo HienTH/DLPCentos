@@ -1,6 +1,9 @@
 {
-	"id": "1",
-	"username": "dlp01",
-	"email": "dlp01@gmail.com",
-	"status": "online"
+    "id_adm_member": 1,
+    "id_adm_company": 1,
+    "id_adm_department": 198,
+    "username": "dlp01",
+    "email": "dlp01@gmail.com",
+    "status": 1,
+    "installed": 1
 }
