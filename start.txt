@@ -2,10 +2,12 @@ sudo yum update
 sudo yum install gcc-c++
 g++ --version
 
-
 g++ -o megaDLP megaDLP.cpp
 g++ -o megaDLPService megaDLPService.cpp
 
 sudo yum install epel-release
 sudo yum -y update
 yum install -y python3
+yum install -y python3-pip
+
+pip3 install requests
