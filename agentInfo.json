@@ -1,9 +1,9 @@
 {
-    "id_adm_member": 1,
+    "id_adm_member": 128,
     "id_adm_company": 1,
-    "id_adm_department": 198,
-    "username": "dlp01",
-    "email": "dlp01@gmail.com",
+    "id_adm_department": 197,
+    "username": "hadoop1",
+    "email": "hadoop1@gov.dni.vn",
     "status": 1,
     "installed": 1
 }

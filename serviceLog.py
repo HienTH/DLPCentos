@@ -4,9 +4,23 @@ import re
 import json
 
 # API endpoint URL
-url = "http://localhost:9090/api/loglinux/save_log_linux"
+url = "http://10.0.202.100:9090/api/loglinux/save_log_linux"
 
 while True:
+
+    # Extract username and email from the JSON data
+    id_adm_member = 128
+    id_adm_company = 1
+    id_adm_department = 197
+    username = "hadoop1"
+    email = "hadoop1@gov.dni.vn"
+
+    # Print the extracted information
+    print("Username:", username)
+    print("Email:", email)
+    print("id_adm_member:", id_adm_member)
+    print("id_adm_company:", id_adm_company)
+    print("id_adm_department:", id_adm_department)
 
     # Regular expression pattern to match the line format
     line_pattern = r"Time: (.*?) - Event: (.*?) - File: (.*)"
@@ -25,12 +39,12 @@ while True:
 
                 # Create a dictionary for the extracted data
                 extracted_item = {
-                    "action": 0,
-                    "file_hash": "",
-                    "file_path": "",
-                    "file_size": "",
-                    "hash": "",
-                    "process_name": "",
+                    "action": 1,
+                    "file_hash": "aaaa",
+                    "file_path": "default",
+                    "file_size": "1",
+                    "hash": "ada89b06bf267526fe29ccd212422282",
+                    "process_name": "psftp.exe",
                     "date_insert": timer,
                     "file_name": "/media/" + (file_name.split('.swp')[0])[1:]
                 }
@@ -40,11 +54,10 @@ while True:
             else:
                 print("Line does not match expected format:", line)
 
-    print(log)
     logData = {
-        "id_adm_member": 136,
+        "id_adm_member": 128,
         "id_adm_company": 1,
-        "id_adm_department": 198,
+        "id_adm_department": 197,
         "log": log
     }
 
@@ -52,7 +65,7 @@ while True:
 
     try:
         # Send a POST request
-        response = requests.get(url)
+        response = requests.post(url, json=logData)
 
         # Check if the request was successful
         if response.status_code == 200:
@@ -61,7 +74,7 @@ while True:
             print("POST request failed. Status code:", response.status_code)
 
         # Wait for 5 minutes before sending the next request
-        time.sleep(10)  # 300 seconds = 5 minutes
+        time.sleep(900)  # 300 seconds = 5 minutes
 
     except Exception as e:
         print("An error occurred:", e)
