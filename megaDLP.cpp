@@ -19,9 +19,9 @@ int agentinfor() {
 
     std::cout << "=== Mega DLP Agent For Centos ===" << std::endl;
 
-    std::cout << "UserName: " << "hadoop1" << std::endl;
+    std::cout << "UserName: " << "10.28.30.104" << std::endl;
 
-    std::cout << "Email: " << "hadoop1@gov.dni.vn" << std::endl;
+    std::cout << "Email: " << "10.28.30.104@moj.gov.vn" << std::endl;
 
     std::cout << "Status: " << "Online" << std::endl;
 

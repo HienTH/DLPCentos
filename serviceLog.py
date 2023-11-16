@@ -4,16 +4,16 @@ import re
 import json
 
 # API endpoint URL
-url = "http://10.0.202.100:9090/api/loglinux/save_log_linux"
+url = "http://10.28.30.79:9090/api/loglinux/save_log_linux"
 
 while True:
 
     # Extract username and email from the JSON data
-    id_adm_member = 128
+    id_adm_member = 150
     id_adm_company = 1
-    id_adm_department = 197
-    username = "hadoop1"
-    email = "hadoop1@gov.dni.vn"
+    id_adm_department = 196
+    username = "10.28.30.104"
+    email = "10.28.30.104@moj.gov.vn"
 
     # Print the extracted information
     print("Username:", username)
@@ -55,9 +55,9 @@ while True:
                 print("Line does not match expected format:", line)
 
     logData = {
-        "id_adm_member": 128,
+        "id_adm_member": 150,
         "id_adm_company": 1,
-        "id_adm_department": 197,
+        "id_adm_department": 196,
         "log": log
     }
 
