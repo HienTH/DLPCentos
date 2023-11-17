@@ -1,0 +1,8 @@
+cd /opt/
+sudo yum install -y git
+git clone https://github.com/HienTH/DLPCentos.git
+mv DLPCentos/ MegaDLP/
+cd MegaDLP/
+Sửa thông tin Agent trong file: agent.txt
+chmod +x install.sh
+./install.sh

@@ -6,14 +6,27 @@ import json
 # API endpoint URL
 url = "http://10.28.30.79:9090/api/loglinux/save_log_linux"
 
+# Function to read configuration from the agent.txt file
+def read_config():
+    config = {}
+    with open('agent.txt') as config_file:
+        for line in config_file:
+            key, value = map(str.strip, line.split(':', 1))
+            config[key.upper()] = value
+    print("Config from file:", config)
+    return config
+    
 while True:
 
-    # Extract username and email from the JSON data
-    id_adm_member = 150
-    id_adm_company = 1
-    id_adm_department = 196
-    username = "10.28.30.104"
-    email = "10.28.30.104@moj.gov.vn"
+    # Read configuration from the file
+    config = read_config()
+
+    # Extract values from the configuration
+    id_adm_member = int(config.get("IDAGENT", 0))
+    id_adm_company = int(config.get("IDCOMPANY", 1))
+    id_adm_department = int(config.get("IDDEPART", 0))
+    username = config.get("USERNAME", "")
+    email = config.get("EMAIL", "")
 
     # Print the extracted information
     print("Username:", username)
@@ -55,9 +68,9 @@ while True:
                 print("Line does not match expected format:", line)
 
     logData = {
-        "id_adm_member": 150,
-        "id_adm_company": 1,
-        "id_adm_department": 196,
+        "id_adm_member": id_adm_member,
+        "id_adm_company": id_adm_company,
+        "id_adm_department": id_adm_department,
         "log": log
     }
 

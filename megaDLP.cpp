@@ -15,15 +15,39 @@ void showHelp() {
     std::cout << "  --disableusb       Disable USB Device Connection" << std::endl;
 }
 
-int agentinfor() {
+void readAgentInfoFromFile(std::string filename) {
+    std::ifstream agentFile(filename.c_str()); // Convert std::string to const char*
+    if (!agentFile.is_open()) {
+        std::cerr << "Failed to open agent file: " << filename << std::endl;
+        return;
+    }
+	
+    std::string line;
+    while (std::getline(agentFile, line)) {
+        std::size_t pos = line.find(":");
+        if (pos != std::string::npos) {
+            std::string key = line.substr(0, pos);
+            std::string value = line.substr(pos + 1);
 
+            // Trim leading and trailing whitespaces from the key and value
+            key.erase(0, key.find_first_not_of(" \t"));
+            key.erase(key.find_last_not_of(" \t") + 1);
+
+            value.erase(0, value.find_first_not_of(" \t"));
+            value.erase(value.find_last_not_of(" \t") + 1);
+
+            std::cout << key << ": " << value << std::endl;
+        }
+    }
+
+    agentFile.close();
+}
+
+int agentinfor() {
     std::cout << "=== Mega DLP Agent For Centos ===" << std::endl;
 
-    std::cout << "UserName: " << "10.28.30.104" << std::endl;
-
-    std::cout << "Email: " << "10.28.30.104@moj.gov.vn" << std::endl;
-
-    std::cout << "Status: " << "Online" << std::endl;
+    // Read agent information from the file
+    readAgentInfoFromFile("agent.txt");
 
     return 0;
 }
