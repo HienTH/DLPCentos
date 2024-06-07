@@ -7,7 +7,7 @@ sudo cp megaDLPService.service /etc/systemd/system/megaDLPService.service
 sudo systemctl daemon-reload
 sudo systemctl enable megaDLPService
 sudo systemctl start megaDLPService
-sudo yum install epel-release
+sudo yum install -y epel-release
 sudo yum install -y python3
 sudo yum install -y python3-pip
 pip3 install requests

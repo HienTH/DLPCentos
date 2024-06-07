@@ -4,7 +4,7 @@ import re
 import json
 
 # API endpoint URL
-url = "http://10.28.30.79:9090/api/loglinux/save_log_linux"
+url = "http://10.1.90.210:9090/api/loglinux/save_log_linux"
 
 # Function to read configuration from the agent.txt file
 def read_config():
