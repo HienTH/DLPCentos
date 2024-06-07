@@ -3,7 +3,7 @@ Description=API Post Tool Service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 /opt/MegaDLP/serviceLog.py
+ExecStart=/usr/bin/python /opt/MegaDLP/serviceLog.py
 WorkingDirectory=/opt/MegaDLP
 Restart=always
 
